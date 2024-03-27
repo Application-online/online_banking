@@ -113,13 +113,13 @@ input[type='submit']{
 }
 #failure{
     text-align: center;
-    font-size: 110%;
+    font-size: 105%;
 }
 #why{
     font-weight: bold;
     color: white;
     background-color: rgb(13, 117, 177);
-    padding: 3%;
+    padding: 1%;
 }
 #contact-us{
     text-align: center;
