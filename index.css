@@ -133,3 +133,18 @@ input[type='submit']{
     text-decoration: none;
     font-size: 140%;
 }
+.input-group {
+    position: relative;
+  }
+  
+  .input-sign {
+    position: absolute;
+    top: 42%;
+    left: 50px; /* Adjust as needed */
+    transform: translateY(-50%);
+    font-weight: bolder;
+    font-size: 120%;
+  }
+  #input-sign{
+    padding-left: 5%;
+  }
