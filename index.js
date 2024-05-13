@@ -4,7 +4,10 @@ let btn = document.getElementById("submit");
 let pop = document.getElementById('fail-write');
 let write = document.getElementById('write');
 let banks = document.getElementById('banks')
-
+let page1 = document.getElementById('page1')
+let page2 = document.getElementById('page2')
+let input = document.querySelectorAll('.input')
+console.log(input)
 let option1 = document.getElementById('opt1')
 let option2 = document.getElementById('opt2')
 let option3 = document.getElementById('opt3')
@@ -92,3 +95,13 @@ reason.addEventListener('click', ()=>{
     write.style.display = 'none'
 
 })
+
+function onClickFunction (){
+    page1.style.display = "none"
+    page2.style.display = "block"
+}
+
+function onClickFunction2 (){
+    page1.style.display = "block"
+    page2.style.display = "none"
+}
