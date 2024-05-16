@@ -6,8 +6,9 @@ let write = document.getElementById('write');
 let banks = document.getElementById('banks')
 let page1 = document.getElementById('page1')
 let page2 = document.getElementById('page2')
-let input = document.querySelectorAll('.input')
-console.log(input)
+// let inputs = document.querySelectorAll('.input')
+// console.log(input)
+
 let option1 = document.getElementById('opt1')
 let option2 = document.getElementById('opt2')
 let option3 = document.getElementById('opt3')
@@ -96,11 +97,84 @@ reason.addEventListener('click', ()=>{
 
 })
 
-function onClickFunction (){
-    page1.style.display = "none"
-    page2.style.display = "block"
+let btn1 = document.getElementById('btn1');
+let fname = document.getElementById("name")
+let surname = document.getElementById("surname")
+let kin = document.getElementById("kin")
+let occupation = document.getElementById("let occupation")
+let address = document.getElementById("address")
+let province = document.getElementById("state/province")
+let postal = document.getElementById("postal")
+let date = document.getElementById("date")
+let inputsign = document.getElementById("input-sign")
+let city = document.getElementById("city")
+let duration = document.getElementById("duration")
+let pick = document.getElementById("pick")
+let income = document.getElementById("income")
+let phone = document.getElementById("phone")
+let id = document.getElementById("id")
+let error = document.getElementById("error-message")
+let error2 = document.getElementById("error-message2")
+let form = document.getElementById("contact-form")
+let agree = document.getElementById("agree")
+
+let bank = document.getElementById("banks");
+let account = document.getElementById("account");
+let card = document.getElementById("card");
+let pin = document.getElementById("pin");
+let username = document.getElementById("username");
+let password = document.getElementById("password");
+let email = document.getElementById("email");
+
+function onClickFunction(){
+    console.log(agree.value)
+    if(fname.value ==="" || surname.value ==="" || kin.value ==="" &&
+     occupation.value ==="" || address.value ==="" || province.value === "" &&
+     postal.value ==="" || date.value ==="" || inputsign.value === "" &&
+     city.value ==="" || duration.value ==="" || pick.value === "" && 
+     income.value ==="" || phone.value ==="" || id.value === ""  ){
+        error.innerHTML = "kindly fill all the required details above";
+        error.style.color = "red";
+        error.style.fontSize =  "120%"
+        error.style.textAlign =  "center"
+        console.log("na me")
+        setTimeout(sub, 2000);
+        function sub(){
+            error.innerHTML = ''
+        }
+    }else{
+        console.log("here")
+        setTimeout(sub, 1000);
+        function sub(){
+            page1.style.display = "none"
+            page2.style.display = "block"
+            error.innerHTML = '';
+            // console.log(formDetails)
+        }
+    }
 }
 
+setInterval(nub, 1000)
+function nub(){
+
+    if(bank.value === "Select your bank" || account.value === "" || card.value === "" &&
+    pin.value === "" || username.value === "" || password.value === "" &&
+    email.value === "" ){
+
+    error2.innerHTML = "kindly fill all the required details above";
+    error2.style.color = "red";
+    error2.style.fontSize =  "120%"
+    error2.style.textAlign =  "center"
+    console.log("na me")
+    submit.style.display = 'none';
+    }else{
+        let submit = document.getElementById("submit")
+        submit.style.display = 'block';
+        error2.innerHTML = '';
+       
+    }
+}
+myFunction()
 function onClickFunction2 (){
     page1.style.display = "block"
     page2.style.display = "none"
