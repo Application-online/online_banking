@@ -55,7 +55,7 @@ window.onload = function() {
             subscribe.style.animationName = 'done';
             subscribe.value = 'DONE'
             form.style.display = 'none'
-            setTimeout(sub, 900);
+            setTimeout(sub, 500);
             function sub(){
                successful.style.display = "block"
             }
