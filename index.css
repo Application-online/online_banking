@@ -14,9 +14,9 @@ body{
     width: 105%;
     /* overflow-x: hidden; */
     display: grid;
-    grid-template-columns: 50% 45%;
+    grid-template-columns: 30% 40% 10%;
     column-gap: 5%;
-    padding-top: 5%;
+    padding-top: 2%;
     padding-left: 3%;
     /* padding-bottom: 1%; */
     box-shadow: 12px 12px 12px black;
@@ -30,6 +30,11 @@ body{
     width: 100%;
     margin-top: -12%;
     margin-left: -4%;
+}
+#icon1{
+    font-size: 200%;
+    padding-top: 20%;
+    margin-left: 80%;
 }
 input{
     width: 100%;

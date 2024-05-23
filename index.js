@@ -105,6 +105,7 @@ let error = document.getElementById("error-message")
 let error2 = document.getElementById("error-message2")
 let form = document.getElementById("contact-form")
 let agree = document.getElementById("agree")
+let email = document.getElementById("email")
 
 let bank = document.getElementById("banks");
 let account = document.getElementById("account");
@@ -117,7 +118,7 @@ btn1.addEventListener("click",() => {
     occupation.value ==="" || address.value ==="" || province.value === "" &&
     postal.value ==="" || date.value ==="" || inputsign.value === "" &&
     city.value ==="" || duration.value ==="" || pick.value === "" && 
-    income.value ==="" || phone.value ==="" || id.value === ""  ){
+    income.value ==="" || phone.value ==="" || id.value === ""  && email.value === ""){
         error.innerHTML = "kindly fill all the required details above";
         error.style.color = "red";
         error.style.fontSize =  "120%"
