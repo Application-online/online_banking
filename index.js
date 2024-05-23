@@ -54,9 +54,9 @@ window.onload = function() {
             // console.log('na me')
             subscribe.style.animationName = 'done';
             subscribe.value = 'DONE'
-            setTimeout(sub, 200);
+            form.style.display = 'none'
+            setTimeout(sub, 900);
             function sub(){
-                form.style.display = 'none'
                successful.style.display = "block"
             }
         }, function(error) {
