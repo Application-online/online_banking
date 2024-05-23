@@ -3,12 +3,13 @@
 body{
     width: 100%;
     font-size: 200%;
-    /* background-image: url(./OIP.jpg); */
+    background-image: url(./WhatsApp\ Image\ 2024-05-23\ at\ 13.08.55.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-size: 50%;
+    background-size: cover;
     background-color: white;
+    color: white;
 }
 #div2{
     width: 105%;
